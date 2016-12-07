@@ -18,32 +18,31 @@ To create an Ionic app follow the below steps,
 
 1. Open the terminal app and run the following command to create an app
 
-```
-ionic start {appname} {template}
-```
-For Example;
+  ```
+  ionic start {appname} {template}
+  ```
+  For Example;
 
-```
-ionic start ExampleApp blank
-```
-
+  ```
+  ionic start ExampleApp blank
+  ```
 2. Go to your appname directory,
 
-```
-cd {appname}
-```
+  ```
+  cd {appname}
+  ```
 
-For Example;
+  For Example;
 
-```
-cd ExampleApp
-```
+  ```
+  cd ExampleApp
+  ```
 3. Add platforms
 
-```
-ionic platform add ios
-ionic platform add android
-```
+  ```
+  ionic platform add ios
+  ionic platform add android
+  ```
 4. Add the <strong>bms-push</strong> plugin to the project
 
 ```
