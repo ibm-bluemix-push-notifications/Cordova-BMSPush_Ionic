@@ -136,12 +136,10 @@ Follow the steps to complete the building of iOS App,
    ```
   You can follow the this [README](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-cordova-plugin-push/blob/master/README.md) to setup **bms-push**.
 
-
 3. You have to set the **Swift Legacy** to **yes** in your `application` and in the `pod frameworks (BMSPush, BMSAnalytics, BMSAnalyticsAPI, BMSCore and BMSSecurity)`.
 
 4. Clean and build the application.
 5. Run the application.
-
 
 ## Example App
 
@@ -153,7 +151,7 @@ The [ExampleApp](https://github.com/ibm-bluemix-push-notifications/Cordova_Ionic
 3. To run the android app got to **platforms -> android** open in Android Studio , build and Run the app.
 
 
-Copyright 2016-17 IBM Corp.
+## Copyright 2016-17 IBM Corp.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
