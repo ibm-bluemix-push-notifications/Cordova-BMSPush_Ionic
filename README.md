@@ -45,11 +45,11 @@ To create an Ionic app follow the below steps,
   ```
 4. Add the <strong>bms-push</strong> plugin to the project
 
-```
-cordova plugin add bms-push
-```
+  ```
+  cordova plugin add bms-push
+  ```
 
-<p>It will add `bms-push` and `bms-core` plugins to your app</p>
+  <p>It will add `bms-push` and `bms-core` plugins to your app</p>
 
 
 5. Edit the `www/index.html` and add your code for <strong>initializing</strong> and <strong>registering</strong> for Bluemix Push notifications. For reference check [Example App Index.html](https://github.com/ibm-bluemix-push-notifications/Cordova_Ionic_HelloPush/ExampleApp/www/index.html) & [Exaple app push.js](https://github.com/ibm-bluemix-push-notifications/Cordova_Ionic_HelloPush/ExampleApp/www/js/push.js)
