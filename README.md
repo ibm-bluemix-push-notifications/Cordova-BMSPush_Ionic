@@ -73,68 +73,68 @@ Follow the steps to complete the building of iOS App,
 1. Change the *Bundle Identifier* and *Signing credentials*
 2. Go to the *AppDelegate.m* file and add the following snippets
 
-<p>Add the `#import "yourApp-swift.h"`</p>
+    Add the **#import "yourApp-swift.h"**
 
 #### Objective-C:
 
- ```
- // Register device token with Bluemix Push Notification Service
- - (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+   ```
+   // Register device token with Bluemix Push Notification Service
+   - (void)application:(UIApplication *)application
+  didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
 
-   [[CDVBMSPush sharedInstance] didRegisterForRemoteNotifications:deviceToken];
-}
+     [[CDVBMSPush sharedInstance] didRegisterForRemoteNotifications:deviceToken];
+  }
 
-// Handle error when failed to register device token with APNs
-- (void)application:(UIApplication*)application
-didFailToRegisterForRemoteNotificationsWithError:(NSError*)error {
+  // Handle error when failed to register device token with APNs
+  - (void)application:(UIApplication*)application
+  didFailToRegisterForRemoteNotificationsWithError:(NSError*)error {
 
-  [[CDVBMSPush sharedInstance] didFailToRegisterForRemoteNotifications:error];
-}
+    [[CDVBMSPush sharedInstance] didFailToRegisterForRemoteNotifications:error];
+  }
 
-// Handle receiving a remote notification
--(void)application:(UIApplication *)application
-didReceiveRemoteNotification:(NSDictionary *)userInfo
-fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+  // Handle receiving a remote notification
+  -(void)application:(UIApplication *)application
+  didReceiveRemoteNotification:(NSDictionary *)userInfo
+  fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 
-  [[CDVBMSPush sharedInstance] didReceiveRemoteNotification:userInfo];
-}
-```
+    [[CDVBMSPush sharedInstance] didReceiveRemoteNotification:userInfo];
+  }
+  ```
 
 #### Swift:
 
-```
- // Register device token with Bluemix Push Notification Service
- func application(application: UIApplication,
- 	didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+  ```
+   // Register device token with Bluemix Push Notification Service
+   func application(application: UIApplication,
+   	didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
 
- 	CDVBMSPush.sharedInstance().didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
- }
-
- // Handle error when failed to register device token with APNs
- func application(application: UIApplication,
- 	didFailToRegisterForRemoteNotificationsWithError error: NSErrorPointer) {
-
- 	CDVBMSPush.sharedInstance().didReceiveRemoteNotificationWithNotification(error)
- }
-
- // Handle receiving a remote notification
- func application(application: UIApplication,
- 	didReceiveRemoteNotification userInfo: [NSObject : AnyObject], 	fetchCompletionHandler completionHandler: ) {
-
- 	CDVBMSPush.sharedInstance().didReceiveRemoteNotificationWithNotification(userInfo)
- }
-
- // Handle receiving a remote notification on launch
- func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-   let remoteNotif = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary
-
-   if remoteNotif != nil {
-     CDVBMSPush.sharedInstance().didReceiveRemoteNotificationOnLaunchWithLaunchOptions(launchOptions)
+   	CDVBMSPush.sharedInstance().didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
    }
- }
- ```
-<p>You can follow the this [README](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-cordova-plugin-push/blob/master/README.md) to setup **bms-push**</p>.
+
+   // Handle error when failed to register device token with APNs
+   func application(application: UIApplication,
+   	didFailToRegisterForRemoteNotificationsWithError error: NSErrorPointer) {
+
+   	CDVBMSPush.sharedInstance().didReceiveRemoteNotificationWithNotification(error)
+   }
+
+   // Handle receiving a remote notification
+   func application(application: UIApplication,
+   	didReceiveRemoteNotification userInfo: [NSObject : AnyObject], 	fetchCompletionHandler completionHandler: ) {
+
+   	CDVBMSPush.sharedInstance().didReceiveRemoteNotificationWithNotification(userInfo)
+   }
+
+   // Handle receiving a remote notification on launch
+   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+     let remoteNotif = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary
+
+     if remoteNotif != nil {
+       CDVBMSPush.sharedInstance().didReceiveRemoteNotificationOnLaunchWithLaunchOptions(launchOptions)
+     }
+   }
+   ```
+  You can follow the this [README](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-cordova-plugin-push/blob/master/README.md) to setup **bms-push**.
 
 
 3. You have to set the **Swift Legacy** to **yes** in your `application` and in the `pod frameworks (BMSPush, BMSAnalytics, BMSAnalyticsAPI, BMSCore and BMSSecurity)`.
