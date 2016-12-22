@@ -1,6 +1,9 @@
 var initializePush = function() {
   if(window.cordova) {
     console.log('Started BMSpush initializ');
+    // Replace the appGuid and clientSecret with your own values
+    // These can be retrieved from your Push Notifications service instance on concole.ng.mybluemix.net
+    // Set the region: BMSClient.REGION_US_SOUTH, BMSClient.REGION_UK, or BMSClient.REGION_SYDNEY
     BMSClient.initialize("Push service region");
       var appGUID = "Your Push service AppGUID";
       var clientSecret = "Your Push service clientSecret";
