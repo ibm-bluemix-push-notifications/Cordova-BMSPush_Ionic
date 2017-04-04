@@ -12,6 +12,7 @@ Cordova_Ionic_HelloPush is an example usage of Bluemix push Cordova plugin in Io
 </ol>
 
  <p>To install the Ionic platform follow this [doc](https://ionicframework.com/getting-started/)</p>
+
 ## Creating Ionic App.
 
 To create an Ionic app follow the below steps,
@@ -62,7 +63,7 @@ To create an Ionic app follow the below steps,
 
 ### Android
 
-<p> Get your `bundle id` from `config.xml` and add it to (Firebase app)[https://console.firebase.google.com/]. Download the `google-services.json` and add to **platforms -> android** </p>
+<p> Get your `bundle id` from `config.xml` and add it to [Firebase app](https://console.firebase.google.com/). Download the `google-services.json` and add to **platforms -> android** </p>
 
 <p>To run the Android application got to **platforms -> android** and open it in **Android Studio** . </p>
 
@@ -87,6 +88,7 @@ To create an Ionic app follow the below steps,
 ```
 
 <p> Build and run your application. </p>
+
 ### iOS
 
 <p>For running the iOS application got to **platforms -> ios** and open **yourApp.xcworkspace** in the latest Xcode (8+)</p>
