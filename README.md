@@ -63,7 +63,7 @@ To create an Ionic app follow the below steps,
 
 ### Android
 
-<p> Get your `bundle id` from `config.xml` and add it to [Firebase app](https://console.firebase.google.com/). Download the `google-services.json` and add to **platforms -> android** </p>
+Get your `bundle id` from `config.xml` and add it to [Firebase app](https://console.firebase.google.com/). Download the `google-services.json` and add to **platforms -> android** 
 
 <p>To run the Android application got to **platforms -> android** and open it in **Android Studio** . </p>
 
