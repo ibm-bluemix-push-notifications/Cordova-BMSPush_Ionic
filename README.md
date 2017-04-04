@@ -62,8 +62,31 @@ To create an Ionic app follow the below steps,
 
 ### Android
 
-<p>To run the Android application got to **platforms -> android** and open it in **Android Studio** . Do the build and run it. You can check the registrations details in the console. </p>
+<p> Get your `bundle id` from `config.xml` and add it to (Firebase app)[https://console.firebase.google.com/]. Download the `google-services.json` and add to **platforms -> android** </p>
 
+<p>To run the Android application got to **platforms -> android** and open it in **Android Studio** . </p>
+
+<p>Open the `build.gradle (Module: android)` and,
+
+* Under `buildscript` locate `dependencies` and add `classpath 'com.google.gms:google-services:3.0.0'`.
+* Scroll down and locate `dependencies {compile fileTree(dir: 'libs', include: '*.jar') , ...}`  and add the following code `apply plugin: 'com.google.gms.google-services'` just below the ending of `dependencies {}`
+
+  For example,
+
+```
+  dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+    // SUB-PROJECT DEPENDENCIES START
+    debugCompile(project(path: "CordovaLib", configuration: "debug"))
+    releaseCompile(project(path: "CordovaLib", configuration: "release"))
+    compile "com.android.support:appcompat-v7:23.2.1"
+    compile "com.google.firebase:firebase-messaging:9.0.2"
+    // SUB-PROJECT DEPENDENCIES END
+  }
+  apply plugin: 'com.google.gms.google-services'
+```
+
+<p> Build and run your application. </p>
 ### iOS
 
 <p>For running the iOS application got to **platforms -> ios** and open **yourApp.xcworkspace** in the latest Xcode (8+)</p>
