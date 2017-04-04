@@ -11,7 +11,7 @@ Cordova_Ionic_HelloPush is an example usage of Bluemix push Cordova plugin in Io
 <li>Xcode</li>
 </ol>
 
- <p>To install the Ionic platform follow this [doc](https://ionicframework.com/getting-started/)</p>
+ To install the Ionic platform follow this [doc](https://ionicframework.com/getting-started/)
 
 ## Creating Ionic App.
 
@@ -50,7 +50,7 @@ To create an Ionic app follow the below steps,
   cordova plugin add bms-push
   ```
 
-  <p>It will add `bms-push` and `bms-core` plugins to your app</p>
+  It will add `bms-push` and `bms-core` plugins to your app
 
 
 5. Edit the `www/index.html` and add your code for <strong>initializing</strong> and <strong>registering</strong> for Bluemix Push notifications. For reference check [Example App Index.html](https://github.com/ibm-bluemix-push-notifications/Cordova_Ionic_HelloPush/ExampleApp/www/index.html) & [Exaple app push.js](https://github.com/ibm-bluemix-push-notifications/Cordova_Ionic_HelloPush/ExampleApp/www/js/push.js)
@@ -63,11 +63,11 @@ To create an Ionic app follow the below steps,
 
 ### Android
 
-Get your `bundle id` from `config.xml` and add it to [Firebase app](https://console.firebase.google.com/). Download the `google-services.json` and add to **platforms -> android** 
+Get your `bundle id` from `config.xml` and add it to [Firebase app](https://console.firebase.google.com/). Download the `google-services.json` and add to **platforms -> android**
 
-<p>To run the Android application got to **platforms -> android** and open it in **Android Studio** . </p>
+To run the Android application got to **platforms -> android** and open it in **Android Studio** .
 
-<p>Open the `build.gradle (Module: android)` and,
+Open the `build.gradle (Module: android)` and,
 
 * Under `buildscript` locate `dependencies` and add `classpath 'com.google.gms:google-services:3.0.0'`.
 * Scroll down and locate `dependencies {compile fileTree(dir: 'libs', include: '*.jar') , ...}`  and add the following code `apply plugin: 'com.google.gms.google-services'` just below the ending of `dependencies {}`
@@ -87,11 +87,11 @@ Get your `bundle id` from `config.xml` and add it to [Firebase app](https://cons
   apply plugin: 'com.google.gms.google-services'
 ```
 
-<p> Build and run your application. </p>
+ Build and run your application.
 
 ### iOS
 
-<p>For running the iOS application got to **platforms -> ios** and open **yourApp.xcworkspace** in the latest Xcode (8+)</p>
+For running the iOS application got to **platforms -> ios** and open **yourApp.xcworkspace** in the latest Xcode (8+)
 
 Follow the steps to complete the building of iOS App,
 
