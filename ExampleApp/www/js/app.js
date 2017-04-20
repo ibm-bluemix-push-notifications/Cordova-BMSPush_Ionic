@@ -22,7 +22,7 @@ angular.module('starter', ['ionic'])
     }
 
     console.log('Started BMSpush initialize');
-    
+
     BMSClient.initialize("Push service region");
     var appGUID = "Your Push service AppGUID";
     var clientSecret = "Your Push service clientSecret";
@@ -41,7 +41,7 @@ angular.module('starter', ['ionic'])
         //Get a list of available tags to which the device can subscribe
         BMSPush.retrieveAvailableTags(function(tags) {
           console.log("retrieveAvailableTags : " + tags);
-          BMSPush.subscribe(tags, null, null);
+          BMSPush.subscribe(tags[0], null, null);
         }, null);
 
         //Get a list of available tags to which the device is subscribed.
