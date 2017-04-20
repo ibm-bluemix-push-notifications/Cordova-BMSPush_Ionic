@@ -70,6 +70,7 @@ To run the Android application got to **platforms -> android** and open it in **
 Open the `build.gradle (Module: android)` and,
 
 * Under `buildscript` locate `dependencies` and add `classpath 'com.google.gms:google-services:3.0.0'`.
+
 * Scroll down and locate `dependencies {compile fileTree(dir: 'libs', include: '*.jar') , ...}`  and add the following code `apply plugin: 'com.google.gms.google-services'` just below the ending of `dependencies {}`
 
   For example,
@@ -77,12 +78,9 @@ Open the `build.gradle (Module: android)` and,
 ```
   dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
-    // SUB-PROJECT DEPENDENCIES START
-    debugCompile(project(path: "CordovaLib", configuration: "debug"))
-    releaseCompile(project(path: "CordovaLib", configuration: "release"))
-    compile "com.android.support:appcompat-v7:23.2.1"
-    compile "com.google.firebase:firebase-messaging:9.0.2"
-    // SUB-PROJECT DEPENDENCIES END
+    ..........
+     .......
+     .....
   }
   apply plugin: 'com.google.gms.google-services'
 ```
@@ -172,9 +170,30 @@ The [ExampleApp](https://github.com/ibm-bluemix-push-notifications/Cordova_Ionic
 
 1. Edit the **www/js/push.js** file with your `APPGUID`,`ClientSecret` and `App Region`. Do the `Cordova Prepare` and `Cordova build`.
 
-2. To run the iOS app got to **platforms -> ios** open in Xcode , build and Run the app.
-3. To run the android app got to **platforms -> android** open in Android Studio , build and Run the app.
+2. Add `Android` and `iOS` platforms.
 
+```  
+ ionic platform add ios
+ ionic platform add android
+```
+
+3. Add the <strong>bms-push</strong> plugin to the project
+
+  ```
+  cordova plugin add bms-push
+  ```
+
+  It will add `bms-push` and `bms-core` plugins to your app
+
+4. Do `cordova prepare` and `cordova build`
+
+
+5. To run the iOS app got to **platforms -> ios** open in Xcode , build and Run the app.
+
+6. To run the android app got to **platforms -> android** open in Android Studio , build and Run the app.
+
+
+>**Note**: In the Android manifest file locate `android:launchMode="singleTop"` and replace it with `android:launchMode="singleTask"` to stop restarting the app each time you open the app from notification click.
 
 ## Copyright 2016-17 IBM Corp.
 
